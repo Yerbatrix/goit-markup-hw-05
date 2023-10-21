@@ -400,9 +400,10 @@ header > .container {
   padding: 12px 24px;
   border: 1px solid var(--CORNFLOWER);
   white-space: nowrap;
-  transition-property: color, background-color, border, box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .philter-button:hover,
@@ -623,7 +624,6 @@ header > .container {
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(-50%);
 }
 
 .modal {
@@ -634,8 +634,6 @@ header > .container {
   top: 0;
   bottom: 0;
   background: var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
-  transform: translateY(0%);
-  opacity: 1;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -676,4 +674,13 @@ header > .container {
 .modal-close-btn:focus {
   background-color: #404bbf;
   border: none;
+}
+
+.icon-close {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-close:hover,
+.icon-close:focus {
+  fill: #ffffff;
 }
