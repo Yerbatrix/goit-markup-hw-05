@@ -129,6 +129,9 @@ header > .container {
   color: var(--studio-color);
   padding: 24px 0;
   display: block;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-navigation-flex {
@@ -163,6 +166,9 @@ header > .container {
   letter-spacing: 0.02em;
   color: var(--main-text-color);
   display: block;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -208,6 +214,9 @@ header > .container {
   display: block;
   margin: 0 auto;
   min-width: 169px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .order-service-btn:hover,
 .order-service-btn:focus {
@@ -348,6 +357,9 @@ header > .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socialmedia-link:hover,
@@ -388,6 +400,9 @@ header > .container {
   padding: 12px 24px;
   border: 1px solid var(--CORNFLOWER);
   white-space: nowrap;
+  transition-property: color, background-color, border, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .philter-button:hover,
@@ -401,12 +416,46 @@ header > .container {
 
 .applink {
   display: block;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.appcard-overlay-frame {
+  width: 360px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.appcard-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 300px;
+  transform: translateY(100%);
+  background-color: var(--logo-color);
+  padding: 40px 32px;
+  color: var(--cloud);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  transition: transform 250ms ease;
+}
+
+.applink:hover .appcard-overlay,
+.applink:focus .appcard-overlay {
+  transform: translateY(0%);
 }
 
 .applink:hover,
 .applink:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transform: translateY(0%);
 }
 
 .portfolio-itemlist {
@@ -473,6 +522,9 @@ header > .container {
   align-items: center;
   justify-content: center;
   color: var(--LIGHT-SLATE);
+  transition-property: border-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-link:hover,
@@ -536,6 +588,9 @@ header > .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-nav-link:hover,
@@ -545,4 +600,19 @@ header > .container {
 
 .footer-social-inner-icon {
   fill: var(--cloud);
+}
+
+.navigation-underline {
+  position: relative;
+}
+
+.navigation-underline::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #404bbf;
+  border-radius: 2px;
 }
